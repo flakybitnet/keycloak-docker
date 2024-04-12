@@ -3,7 +3,7 @@
 
 variables:
   - &kaniko_image "gcr.io/kaniko-project/executor:v1.22.0-debug"
-  - &app_version "23.0.7"
+  - &app_version "24.0.2"
 
 matrix:
   APP_PROFILE:
