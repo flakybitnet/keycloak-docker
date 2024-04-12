@@ -5,6 +5,21 @@ variables:
   - &kaniko_image "gcr.io/kaniko-project/executor:v1.22.0-debug"
   - &app_version "23.0.7"
 
+matrix:
+  APP_PROFILE:
+    - std-pg
+    - ha-pg
+
+when:
+  - branch: main
+    event:
+      - manual
+  - branch:
+      exclude: main
+    event:
+      - push
+      - manual
+
 steps:
   set-env:
     image: debian:bookworm-slim
