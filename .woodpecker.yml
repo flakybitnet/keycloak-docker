@@ -5,10 +5,10 @@
 # SKIP_PUBLISH_ECR=true|false - skip publishing in AWS Public ECR
 
 variables:
-  - &kaniko_image "gcr.io/kaniko-project/executor:v1.22.0-debug"
+  - &kaniko_image "gcr.io/kaniko-project/executor:v1.23.0-debug"
   - &skopeo_image "quay.io/containers/skopeo:v1.15.0"
-  - &awscli_image "public.ecr.aws/aws-cli/aws-cli:2.15.38"
-  - &app_version "24.0.3"
+  - &awscli_image "public.ecr.aws/aws-cli/aws-cli:2.15.53"
+  - &app_version "24.0.4"
 
 matrix:
   APP_PROFILE:
