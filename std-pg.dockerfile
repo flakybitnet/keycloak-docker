@@ -1,4 +1,5 @@
-FROM quay.io/keycloak/keycloak:25.0.6
+ARG KEYCLOAK_VERSION
+FROM quay.io/keycloak/keycloak:${KEYCLOAK_VERSION}
 
 ENV KC_CACHE=local
 ENV KC_DB=postgres

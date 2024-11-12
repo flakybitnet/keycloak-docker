@@ -13,7 +13,8 @@ image="$APP_NAME/$APP_COMPONENT:$APP_VERSION-$APP_PROFILE"
 dockerfile="./$APP_PROFILE.dockerfile"
 
 echo && echo "Building $image image"
-executor -c ./ -f "$dockerfile" -d "$HARBOR_REGISTRY/$image"
+executor -c ./ -f "$dockerfile" -d "$HARBOR_REGISTRY/$image" \
+    --build-arg KEYCLOAK_VERSION="$KEYCLOAK_VERSION" \
 
 echo && echo 'Done'
 
