@@ -13,15 +13,13 @@ matrix:
     - ha-pg
 
 when:
-  - branch: main
-    event:
-      - manual
-  - branch:
-      exclude: main
-    event:
-      - manual
-      - push
+  - event:
       - tag
+      - manual
+  - event:
+      - push
+    branch:
+      exclude: main
 
 steps:
   # prepare
